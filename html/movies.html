@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="code.js"></script>
+    <title>365 Entertainment</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="navigation">
+          <ul>
+            <a class="links" href="index.html"
+              ><img
+                class="logo"
+                src="365img.jpg"
+                height="40px"
+                alt="365 Entertainment Portal"
+            /></a>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="#">Tv Series</a></li>
+            <li><a href="#">Audio</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="slideshow-container">
+        <div class="mySlides1">
+          <img src="img1.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides1">
+          <img src="img2.jpg" style="width: 100%" />
+        </div>
+
+        <div class="mySlides1">
+          <img src="img3.jpg" style="width: 100%" />
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+      </div>
+
+      <div class="dropdown">
+        <button id="dropbtn" onclick="toggleGenreList()">
+          <span id="genreText">Genre</span><i class="fa fa-caret-down"></i>
+        </button>
+        <div id="dropdown-content">
+          <a onclick="getMediaPosters(this.text)">All</a>
+          <a onclick="getMediaPosters(this.text)">Action</a>
+          <a onclick="getMediaPosters(this.text)">Drama</a>
+          <a onclick="getMediaPosters(this.text)">Sci-Fi</a>
+        </div>
+      </div>
+
+      <div class="search-container">
+        <form onsubmit="javascript:return false;">
+          <input
+            type="text"
+            class="input-medium search-query"
+            placeholder="Search your favourite movie title"
+            name="search"
+            oninput="updateResults()"
+          />
+
+          <div class="search-container-button">
+            <button type="submit" onclick="updateResults()">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="media-carousel-container">
+        <div id="media-holder-action">
+          <div id="image-container-action">
+            <div class="movies-action">
+              <div class="media-carousel-movies">
+                <img
+                  src="haider.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Haider</b><br />Indian crime tragedy
+                  film.
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="jack.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Jack Reacher</b><br />Action/Thriller
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="raees.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Raees</b><br />Action/Thriller
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img10.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Thor</b><br />Action
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img11.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">A Gentleman</b><br />Action/Comdey
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img12.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Warrior</b><br />Action/Sports
+                </div>
+              </div>
+            </div>
+
+            <div class="movies-drama">
+              <div class="media-carousel-movies">
+                <img
+                  src="darr.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Darr</b><br />Drama/Thriller
+                </div>
+              </div>
+
+              <div class="media-carousel-movies">
+                <img
+                  src="maqbool.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Maqbool</b><br />Drama/Crime
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="omkara.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Omkara</b><br />Drama/Crime
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="prisioners.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Prisioners</b><br />Thriller/Drama
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="lion.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Lion</b><br />Drama
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="sacred.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Sacred Games</b><br />Drama
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="sir.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Sir</b><br />Drama/Romance
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="sparsh.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Sparsh</b><br />Drama
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="tamasha.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Tamasha</b><br />Drama/Romance
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="shawshank.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">The Shawshank Redemption</b
+                  ><br />Drama/Crime
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="highway.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Highway</b><br />Drama
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img4.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Donnie Darko</b><br />Drama/Horror
+                </div>
+              </div>
+            </div>
+
+            <div class="movies-scifi">
+              <div class="media-carousel-movies">
+                <img
+                  src="inception.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Inception</b><br />Action/Sci-fi
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="interstellar.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Interstellar</b><br />Sci-fi
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="annihilation.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Annihilation</b><br />Sci-fi/Horror
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="mortal.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Mortal Engines</b><br />Sci-fi/Thriller
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img207.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Martian</b><br />Sci-fi/Adventure
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img302.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">TENET</b><br />Sci-fi/Action
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img303.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Gravity</b><br />Sci-fi/Adventure
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img304.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">2001 A Space Odyssey</b
+                  ><br />Sci-fi/Adventure
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img303.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">ASTRA</b><br />Sci-fi/Adventure
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="img305.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Geostorm</b><br />Sci-fi/Thriller
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="matrix.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Matrix</b><br />Sci-fi/Action
+                </div>
+              </div>
+              <div class="media-carousel-movies">
+                <img
+                  src="oblivion.jpg"
+                  alt="media carousel"
+                  width="200"
+                  height="200"
+                />
+                <div class="overlay">
+                  <b class="movie-title">Oblivion</b><br />Sci-fi/Adventure
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="copyright">
+        <a class="links" href="index.html"
+          ><img class="logo" src="365img.jpg" alt="365 Entertainment Portal"
+        /></a>
+        <div class="text">
+          Powered by 365 Entertainment Portal 2019. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
